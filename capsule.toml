@@ -1,0 +1,16 @@
+schema_version = "0.3"
+name = "hello-capsule"
+version = "0.1.0"
+type = "app"
+default_target = "main"
+
+[metadata]
+description = "Minimal hello capsule — a fixture for ato Managed Cloud MVP run_capsule_lite (capsule.toml_lite) execution. No dependencies."
+
+[targets.main]
+runtime = "source"
+driver = "node"
+runtime_version = "20"
+# Simple, no-shell entrypoint — capsule.toml_lite splits this into argv and runs
+# it with no shell. No build step, no dependency install.
+run = "node main.js"
