@@ -14,3 +14,12 @@ runtime_version = "20"
 # Simple, no-shell entrypoint — capsule.toml_lite splits this into argv and runs
 # it with no shell. No build step, no dependency install.
 run = "node main.js"
+
+[targets.web]
+runtime = "source"
+driver = "node"
+runtime_version = "20"
+# Web entrypoint — capsule_web_lite starts this, probes 127.0.0.1:port, and
+# exposes it via the runner's public /__ato_app/ URL. The runner injects PORT.
+run = "node server.js"
+port = 3000
